@@ -1,0 +1,9 @@
+{
+    "template": "profile_post_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:macro template=\"quick_reply_macros\" name=\"body\"",
+    "replace": "$0\narg-showSchedule=\"{{ $xf.visitor.canCreateScheduled() }}\""
+}

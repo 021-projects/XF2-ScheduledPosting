@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$thread.discussion_state == 'moderated'\">",
+    "replace": "<xf:if is=\"$thread.discussion_state == 'scheduled'\">\n\t<li>\n\t\t<i class=\"structItem-status structItem-status--scheduled\" aria-hidden=\"true\" title=\"{{ phrase('bssp_scheduled_publication')|for_attr }}\"></i>\n\t\t<span class=\"u-srOnly\">{{ phrase('bssp_scheduled_publication') }}</span>\n\t</li>\n</xf:if>\n$0"
+}

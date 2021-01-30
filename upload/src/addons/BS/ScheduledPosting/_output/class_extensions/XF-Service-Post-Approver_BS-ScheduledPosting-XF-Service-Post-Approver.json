@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Service\\Post\\Approver",
+    "to_class": "BS\\ScheduledPosting\\XF\\Service\\Post\\Approver",
+    "execute_order": 10,
+    "active": true
+}

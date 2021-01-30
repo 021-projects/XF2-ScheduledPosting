@@ -1,0 +1,9 @@
+{
+    "template": "member_view",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:macro template=\"metadata_macros\" name=\"metadata\"",
+    "replace": "<xf:js src=\"bs/scheduled_posting/scheduled_post.js\" min=\"1\" />\n\n$0"
+}

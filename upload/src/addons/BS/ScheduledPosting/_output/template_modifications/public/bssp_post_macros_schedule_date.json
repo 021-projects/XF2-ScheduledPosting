@@ -1,0 +1,9 @@
+{
+    "template": "post_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$post.isUnread()\">",
+    "replace": "<xf:if is=\"$post.message_state == 'scheduled' && $post.Schedule\">\n\t<li>\n\t\t<a href=\"{{ link('threads/post', $thread, {'post_id': $post.post_id}) }}\" class=\"u-concealed\"\n\t\t   rel=\"nofollow\">\n\t\t\t<xf:date time=\"{$post.Schedule.posting_date}\"/>\n\t\t</a>\n\t</li>\n</xf:if>\n$0"
+}

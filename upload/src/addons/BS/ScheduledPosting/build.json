@@ -1,0 +1,9 @@
+{
+    "additional_files": [
+        "js/bs/scheduled_posting"
+    ],
+    "minify": [
+        "js/bs/scheduled_posting/posting.js",
+        "js/bs/scheduled_posting/scheduled_post.js"
+    ]
+}

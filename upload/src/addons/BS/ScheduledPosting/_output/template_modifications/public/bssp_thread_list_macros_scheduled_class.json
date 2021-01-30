@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "structItem--thread",
+    "replace": "$0{{ $thread.discussion_state == 'scheduled' ? ' is-scheduled' : '' }}"
+}

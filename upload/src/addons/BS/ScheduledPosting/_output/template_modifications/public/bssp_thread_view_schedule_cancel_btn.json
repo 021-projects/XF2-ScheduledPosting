@@ -1,0 +1,9 @@
+{
+    "template": "thread_view",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$thread.canApproveUnapprove()",
+    "replace": "<xf:if is=\"$thread.canEditSchedule()\">\n\t<xf:button href=\"{{ link('threads/schedule-cancel', $thread) }}\" class=\"button--link\" overlay=\"true\">\n\t\t{{ phrase('bssp_cancel_publication') }}\n\t</xf:button>\n</xf:if>\n$0"
+}

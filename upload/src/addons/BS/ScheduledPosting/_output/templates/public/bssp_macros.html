@@ -1,0 +1,21 @@
+<xf:macro name="scheduled_input" arg-class="" arg-value="">
+	<xf:css src="bssp_schedule.less" />
+	<xf:css src="bssp_bootstrap_datetimepicker.less" />
+	
+	<xf:js src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment-with-locales.min.js" />
+	<xf:js src="bs/scheduled_posting/bootstrap.min.js" />
+	<xf:js src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" />
+	<xf:js src="bs/scheduled_posting/posting.js" min="1" />
+
+	<div class="schedule-input js-scheduleInput{{ $class ? ' ' . $class : '' }}{{ $value ? ' scheduled' : '' }}" 
+		 data-xf-init="schedule-input"
+		 data-min-date="{{ $xf.time + 60 }}"
+		 data-locale="{{ $xf.language.language_code|substr(0, 2) }}"
+		 data-trigger-format="{{ phrase('bssp_momentjs.schedule_format') }}">
+		
+		<span class="schedule-trigger js-scheduleTrigger">{{ $value ? date($value, 'd F Y H:i') : phrase('bssp_now') }}</span>
+		<span class="schedule-reset js-scheduleReset"><i class="icon"></i></span>
+		<input type="checkbox" name="scheduled[is]" class="js-scheduleCheckbox"{{ $value ? ' checked="checked"' : '' }} />
+		<xf:textbox name="scheduled[posting_date]" class="js-scheduleDate" value="{{ $value ? date($value, 'd.m.Y H:i') : '' }}" />
+	</div>
+</xf:macro>

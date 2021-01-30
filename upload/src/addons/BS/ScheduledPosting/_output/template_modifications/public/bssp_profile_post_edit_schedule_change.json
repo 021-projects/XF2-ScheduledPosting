@@ -1,0 +1,9 @@
+{
+    "template": "profile_post_edit",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$profilePost.canSendModeratorActionAlert()\">",
+    "replace": "<xf:if is=\"$profilePost.canEditSchedule()\">\n\t<xf:formrow label=\"{{ phrase('post_date') }}\" rowtype=\"{{ $quickEdit ? 'fullWidth noLabel' : '' }}\">\n\t\t<xf:macro template=\"bssp_macros\" name=\"scheduled_input\" \n\t\t\t  arg-value=\"{$profilePost.Schedule.posting_date}\" />\n\t</xf:formrow>\n</xf:if>\n\n$0"
+}

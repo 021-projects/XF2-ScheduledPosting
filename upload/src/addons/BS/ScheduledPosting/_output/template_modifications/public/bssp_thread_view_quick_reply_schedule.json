@@ -1,0 +1,9 @@
+{
+    "template": "thread_view",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "arg-lastKnownDate=\"{$thread.last_post_date}\"",
+    "replace": "$0\narg-showSchedule=\"{{ $xf.visitor.canCreateScheduled($thread.node_id) }}\""
+}

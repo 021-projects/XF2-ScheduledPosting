@@ -1,0 +1,9 @@
+{
+    "template": "profile_post_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<li><a href=\"{{ link('profile-posts', $profilePost) }}\" class=\"u-concealed\" rel=\"nofollow\"><xf:date time=\"$profilePost.post_date\" /></a></li>",
+    "replace": "$0\n<xf:if is=\"$profilePost.message_state == 'scheduled' && $profilePost.Schedule\">\n\t<li><a href=\"{{ link('profile-posts', $profilePost) }}\" class=\"u-concealed\" rel=\"nofollow\"><xf:date time=\"$profilePost.Schedule.posting_date\" /></a></li>\n</xf:if>"
+}

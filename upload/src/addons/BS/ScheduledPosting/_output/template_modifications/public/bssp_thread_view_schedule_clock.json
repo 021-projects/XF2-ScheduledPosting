@@ -1,0 +1,9 @@
+{
+    "template": "thread_view",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$xf.options.enableTagging",
+    "replace": "<xf:if is=\"$thread.discussion_state == 'scheduled' && $thread.Schedule\">\n\t<li>\n\t\t<xf:fa icon=\"fa-clock\" title=\"{{ phrase('bssp_scheduled_publication')|for_attr }}\" />\n\t\t<span class=\"u-srOnly\">{{ phrase('bssp_scheduled_publication') }}</span>\n\n\t\t<a href=\"{{ link('threads', $thread) }}\" class=\"u-concealed\"><xf:date time=\"{$thread.Schedule.posting_date}\" /></a>\n\t</li>\n</xf:if>\n$0"
+}

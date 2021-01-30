@@ -1,0 +1,6 @@
+{
+    "from_class": "XF\\Service\\ProfilePost\\Creator",
+    "to_class": "BS\\ScheduledPosting\\XF\\Service\\ProfilePost\\Creator",
+    "execute_order": 10,
+    "active": true
+}

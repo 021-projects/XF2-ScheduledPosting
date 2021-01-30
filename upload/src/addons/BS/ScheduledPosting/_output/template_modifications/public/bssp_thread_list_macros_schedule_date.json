@@ -1,0 +1,9 @@
+{
+    "template": "thread_list_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "/<li class=\"structItem-startDate\">.*?<\\/li>/s",
+    "replace": "$0\n<xf:if is=\"$thread.discussion_state == 'scheduled' && $thread.Schedule\">\n\t<li class=\"structItem-scheduleDate\"><a href=\"{{ link('threads', $thread) }}\" rel=\"nofollow\"><xf:date time=\"{$thread.Schedule.posting_date}\" /></a></li>\n</xf:if>"
+}

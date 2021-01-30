@@ -1,0 +1,9 @@
+{
+    "template": "forum_post_quick_thread",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:if is=\"$xf.options.multiQuote\">",
+    "replace": "<xf:if is=\"$xf.visitor.canCreateScheduled($forum.node_id)\">\n\t<xf:macro template=\"bssp_macros\" name=\"scheduled_input\" arg-class=\"ml\" />\n</xf:if>\n$0"
+}

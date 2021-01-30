@@ -1,0 +1,9 @@
+{
+    "template": "profile_post_macros",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "/(' is-ignored' : '' }})(.*?\")/s",
+    "replace": "$1 {{ $profilePost.message_state == 'scheduled' ? 'is-scheduled' : '' }}$2\ndata-xf-init=\"scheduled-post\""
+}
