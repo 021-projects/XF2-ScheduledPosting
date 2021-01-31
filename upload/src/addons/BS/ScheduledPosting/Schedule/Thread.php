@@ -28,10 +28,16 @@ class Thread extends AbstractHandler
         $thread->discussion_state = 'visible';
         $thread->post_date = $schedule->posting_date;
 
+        /** @var \XF\Entity\Post $post */
         if ($post = $thread->FirstPost) {
             $post->post_date = $schedule->posting_date;
 
-            $save = $thread->save(false, false) && $post->save(false, false);
+            if ($post->post_id === $thread->last_post_id) {
+                $thread->last_post_date = $schedule->posting_date;
+            }
+
+            $save = $thread->save(false, false)
+                && $post->save(false, false);
 
             if ($save) {
                 $this->sendNotifications($post);
